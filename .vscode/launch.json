@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-KylerApplication<kyler>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.vscodetesting.kyler.KylerApplication",
+            "projectName": "kyler",
+            "args": "--spring.profiles.active=local",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
