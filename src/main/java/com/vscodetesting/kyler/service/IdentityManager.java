@@ -23,8 +23,20 @@ public class IdentityManager {
         return beerRepository.findAll();
     }
 
+    public List<Beer> getBeersByType(String type) {
+        return beerRepository.findByType(type);
+    }
+
     public Beer createBeer(Beer beer) {
         return beerRepository.save(beer);
+    }
+
+    public void deleteBeer(String id) {
+        beerRepository.delete(id);
+    }
+
+    public Beer updateBeer(Beer beer) {
+        return beerRepository.update(beer.getId(), beer);
     }
 
 }

@@ -14,6 +14,6 @@ public interface BeerRepository {
 
     List<Beer> findAll();
 
-    List<Beer> findByCountry(String country);
+    List<Beer> findByType(String type);
 
 } 

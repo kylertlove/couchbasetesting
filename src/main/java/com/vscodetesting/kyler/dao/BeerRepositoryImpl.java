@@ -36,14 +36,13 @@ public class BeerRepositoryImpl implements BeerRepository {
 
     @Override
     public Beer update(String id, Beer beer) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        collection.replace(beer.getId(), beer);
+        return beer;
     }
 
     @Override
     public void delete(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        collection.remove(id);
     }
 
     @Override
@@ -55,9 +54,9 @@ public class BeerRepositoryImpl implements BeerRepository {
     }
 
     @Override
-    public List<Beer> findByCountry(String country) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByCountry'");
+    public List<Beer> findByType(String type) {
+        String statement = "Select id, name, description, type FROM `beers`.`_default`.`_default` WHERE type= '" + type + "'";
+        return cluster.query(statement).rowsAs(Beer.class);
     }
     
 }
