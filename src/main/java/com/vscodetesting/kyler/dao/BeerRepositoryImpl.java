@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.Cluster;
 import com.couchbase.client.java.Collection;
-import com.vscodetesting.kyler.config.CouchbaesConfig;
+import com.vscodetesting.kyler.config.CouchbaseConfig;
 import com.vscodetesting.kyler.models.Beer;
 
 @Repository
@@ -15,9 +15,9 @@ public class BeerRepositoryImpl implements BeerRepository {
 
     private final Cluster cluster;
     private final Collection collection;
-    private final CouchbaesConfig couchbaseConfig;
+    private final CouchbaseConfig couchbaseConfig;
 
-    public BeerRepositoryImpl(Cluster cluster, Bucket bucket, CouchbaesConfig couchbaseConfig) {
+    public BeerRepositoryImpl(Cluster cluster, Bucket bucket, CouchbaseConfig couchbaseConfig) {
         this.cluster = cluster;
         this.collection = bucket.scope("_default").collection("_default");
         this.couchbaseConfig = couchbaseConfig;

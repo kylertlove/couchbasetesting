@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Configuration
 @Slf4j
-public class CouchbaesConfig {
+public class CouchbaseConfig {
     
     @Bean(destroyMethod = "disconnect")
     Cluster getCouchbaseCluster() {

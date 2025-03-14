@@ -1,0 +1,10 @@
+    type Query {
+      beerById(id: ID): Beer
+    }
+
+    type Beer {
+      id: ID
+      name: String
+      type: String
+      description: String
+    }
